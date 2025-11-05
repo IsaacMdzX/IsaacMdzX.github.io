@@ -1,11 +1,6 @@
-<!-- Botón -->
-<button id="downloadPDF" class="btn">Descargar PDF</button>
-
-<!-- Script -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-<script>
+// Descargar PDF
 document.getElementById("downloadPDF").addEventListener("click", () => {
-  const element = document.body; // puedes cambiarlo a un div específico
+  const element = document.getElementById("cv-content");
   const opt = {
     margin: 0.3,
     filename: 'CV_CarlosIsaacMendez.pdf',
@@ -15,4 +10,3 @@ document.getElementById("downloadPDF").addEventListener("click", () => {
   };
   html2pdf().set(opt).from(element).save();
 });
-</script>
