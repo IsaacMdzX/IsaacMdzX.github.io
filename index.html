@@ -1,84 +1,159 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Carlos Isaac | Portafolio</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Carlos Isaac — Portafolio</title>
+
+  <!-- Estilos -->
   <link rel="stylesheet" href="style.css" />
+
+  <!-- html2pdf -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </head>
 <body>
-  <!-- NAVBAR -->
-  <nav class="navbar">
-    <div class="logo">Carlos Isaac</div>
-    <ul>
-      <li><a href="#inicio">Inicio</a></li>
-      <li><a href="#proyectos">Proyectos</a></li>
-      <li><a href="#habilidades">Habilidades</a></li>
-      <li><a href="#contacto">Contacto</a></li>
-    </ul>
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <div class="brand">Carlos <span>Isaac</span></div>
+      <ul class="nav-links">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#proyectos">Proyectos</a></li>
+        <li><a href="#habilidades">Habilidades</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </div>
   </nav>
 
   <!-- INICIO -->
-  <section id="inicio" class="section inicio">
-    <div class="intro-card">
-      <h1>Hola, soy <span>Carlos Isaac</span></h1>
-      <p>Estudiante de Ingeniería en Sistemas Computacionales, enfocado en desarrollo web, APIs y aplicaciones con Flask y Flutter.</p>
-      <div class="buttons">
-        <a href="https://github.com/IsaacMdzX" target="_blank" class="btn">GitHub</a>
-        <a href="mailto:isaacmdz.music29a@gmail.com" class="btn btn-outline">Correo</a>
-        <button id="download-btn" class="btn">Descargar CV</button>
+  <header id="inicio" class="hero">
+    <div class="hero-card" id="cv-container">
+      <div class="hero-left">
+        <div class="avatar">CI</div>
+      </div>
+
+      <div class="hero-right">
+        <h1 class="name">Carlos <span>Isaac</span></h1>
+
+        <!-- Tu descripción personal que proporcionaste -->
+        <p class="tagline">
+          Estudiante de Ingeniería en Sistemas Computacionales. Aprendiendo sobre desarrollo web, APIs, desarrollo de interfaces,
+          desarrollo de apps con Flask y apps móviles usando Flutter. Me gusta visitar museos, aprender nuevas técnicas y crear soluciones prácticas.
+        </p>
+
+        <div class="cta">
+          <a class="btn" href="https://github.com/IsaacMdzX" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn btn-outline" href="mailto:isaacmdz.music29a@gmail.com">Correo</a>
+          <button id="download-btn" class="btn">Descargar CV</button>
+        </div>
+
+        <div class="quick-meta">
+          <span>🎓 Tecnológico Nacional de México – ISC (2022 – Actualidad)</span>
+        </div>
       </div>
     </div>
-  </section>
+  </header>
 
   <!-- PROYECTOS -->
-  <section id="proyectos" class="section proyectos">
-    <h2>Proyectos Destacados</h2>
+  <section id="proyectos" class="section">
+    <h2>Proyectos destacados</h2>
+    <p class="section-sub">Tres proyectos representativos, con enlaces directos a sus repositorios.</p>
+
     <div class="projects-grid">
-      <div class="card">
-        <h3>Tienda de Sneakers</h3>
-        <p>Tienda en línea desarrollada para un cliente local. Incluye catálogo, carrito y API de pagos.</p>
-        <a href="https://github.com/IsaacMdzX/ProyectoIngdeSoftware" target="_blank">Ver en GitHub</a>
-      </div>
-      <div class="card">
-        <h3>Tienda Gamer</h3>
-        <p>Proyecto de comercio electrónico para venta de accesorios y consolas, desarrollado con Backbone.js y Flask.</p>
-        <a href="https://github.com/Seuahjvyz/GameStore#" target="_blank">Ver en GitHub</a>
-      </div>
-      <div class="card">
-        <h3>Analizador Léxico</h3>
-        <p>Herramienta para corrección de texto y análisis léxico, desarrollada en Python y Flask.</p>
-        <a href="https://github.com/IsaacMdzX/AnaliszadorL-xico" target="_blank">Ver en GitHub</a>
-      </div>
+      <article class="project-card">
+        <div class="project-head">
+          <h3>Tienda de Sneakers</h3>
+          <span class="pill">Cliente local</span>
+        </div>
+        <p class="muted">Tienda en línea con catálogo, carrito y pasarela de pago.</p>
+        <p class="muted small"><strong>Tecnologías:</strong> Python, Flask, HTML, CSS, JavaScript</p>
+        <div class="project-actions">
+          <a href="https://github.com/IsaacMdzX/ProyectoIngdeSoftware" target="_blank" rel="noopener">Ver código</a>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-head">
+          <h3>Tienda Gamer</h3>
+          <span class="pill">En desarrollo</span>
+        </div>
+        <p class="muted">E-commerce para accesorios, juegos y consolas. Front con Backbone.js, backend en Python.</p>
+        <p class="muted small"><strong>Tecnologías:</strong> HTML, CSS, JS, Backbone.js, Python</p>
+        <div class="project-actions">
+          <a href="https://github.com/Seuahjvyz/GameStore" target="_blank" rel="noopener">Ver código</a>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-head">
+          <h3>Analizador Léxico</h3>
+          <span class="pill">Herramienta</span>
+        </div>
+        <p class="muted">Proyecto para analizar y corregir texto (lógica y ortografía), en desarrollo.</p>
+        <p class="muted small"><strong>Tecnologías:</strong> Python, Flask, HTML, JS</p>
+        <div class="project-actions">
+          <a href="https://github.com/IsaacMdzX/AnaliszadorL-xico" target="_blank" rel="noopener">Ver código</a>
+        </div>
+      </article>
     </div>
   </section>
 
   <!-- HABILIDADES -->
-  <section id="habilidades" class="section habilidades">
+  <section id="habilidades" class="section alt">
     <h2>Habilidades</h2>
-    <div class="skills-container">
-      <div>
+    <div class="skills-grid">
+      <div class="skills-block">
         <h4>Técnicas</h4>
-        <p>Flask, Flutter, GitHub, HTML, CSS, JavaScript, Java, C++, C#, Python, MySQL, PostgreSQL</p>
+        <ul>
+          <li>Flask · Flutter · Git · Git Bash</li>
+          <li>HTML · CSS · JavaScript · Backbone.js</li>
+          <li>Python · Java · C++ · C# · C</li>
+          <li>MySQL · PostgreSQL</li>
+        </ul>
       </div>
-      <div>
+
+      <div class="skills-block">
         <h4>Blandas</h4>
-        <p>Comunicación, liderazgo, empatía, adaptabilidad, compromiso, trabajo en equipo</p>
+        <ul>
+          <li>Buena comunicación · Trabajo en equipo · Liderazgo</li>
+          <li>Adaptabilidad · Empatía · Compromiso</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCACIÓN + CERTIFICACIONES -->
+  <section id="educacion" class="section">
+    <h2>Educación y Certificaciones</h2>
+    <div class="edu-grid">
+      <div class="edu-card">
+        <h4>Tecnológico Nacional de México — Campus Iztapalapa</h4>
+        <p class="muted">Ingeniería en Sistemas Computacionales (2022 – Actualidad)</p>
+      </div>
+      <div class="edu-card">
+        <h4>Cursos y Certificados</h4>
+        <p class="muted">Cursos de Python, Java, Base de Datos, Flask. Certificados en SoloLearn (Python, Java, SQL). Curso sobre Inteligencia Artificial.</p>
       </div>
     </div>
   </section>
 
   <!-- CONTACTO -->
-  <section id="contacto" class="section contacto">
+  <section id="contacto" class="section alt">
     <h2>Contacto</h2>
-    <p>📧 <a href="mailto:isaacmdz.music29a@gmail.com">isaacmdz.music29a@gmail.com</a></p>
-    <p>🌐 <a href="https://github.com/IsaacMdzX" target="_blank">github.com/IsaacMdzX</a></p>
-    <p>🎓 Tecnológico Nacional de México Campus Iztapalapa</p>
+    <p class="muted">📧 <a href="mailto:isaacmdz.music29a@gmail.com">isaacmdz.music29a@gmail.com</a> · 🌐 <a href="https://github.com/IsaacMdzX" target="_blank" rel="noopener">github.com/IsaacMdzX</a></p>
+
+    <div class="contact-form">
+      <!-- mock form (no backend) -->
+      <input type="text" placeholder="Tu nombre (opcional)" id="contact-name" />
+      <input type="email" placeholder="Tu correo" id="contact-email" />
+      <textarea id="contact-message" placeholder="Mensaje"></textarea>
+      <button id="contact-send" class="btn">Enviar (solo demo)</button>
+      <p class="note small muted">Este formulario es un mock; si deseas integrarlo con correo o backend te puedo ayudar.</p>
+    </div>
   </section>
 
   <footer>
-    © 2025 Carlos Isaac — Portafolio Web
+    © 2025 Carlos Isaac — Portafolio
   </footer>
 
   <script src="script.js"></script>
