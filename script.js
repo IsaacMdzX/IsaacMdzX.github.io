@@ -1,19 +1,18 @@
-// Descarga PDF (usa html2pdf)
-document.getElementById('download-btn').addEventListener('click', () => {
-  const element = document.getElementById('cv-container'); // solo la tarjeta hero
+<!-- Botón -->
+<button id="downloadPDF" class="btn">Descargar PDF</button>
+
+<!-- Script -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script>
+document.getElementById("downloadPDF").addEventListener("click", () => {
+  const element = document.body; // puedes cambiarlo a un div específico
   const opt = {
-    margin: 0.4,
-    filename: 'Carlos_Isaac_CV.pdf',
+    margin: 0.3,
+    filename: 'CV_CarlosIsaacMendez.pdf',
     image: { type: 'jpeg', quality: 0.98 },
-    html2canvas: { scale: 2, logging: false },
+    html2canvas: { scale: 2 },
     jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
   };
   html2pdf().set(opt).from(element).save();
 });
-
-// Mock enviar contacto (solo demo)
-document.getElementById('contact-send')?.addEventListener('click', () => {
-  const name = document.getElementById('contact-name').value || 'Anon';
-  const email = document.getElementById('contact-email').value || 'sin correo';
-  alert(`Gracias ${name} — esto es un demo. Mensaje: ${email}`);
-});
+</script>
