@@ -37,55 +37,34 @@ body{
 .nav-links a:hover{background:rgba(0,102,214,0.08);color:var(--primary)}
 
 /* HERO */
-.hero{padding-top:70px;padding-bottom:40px;display:flex;align-items:center;justify-content:center}
-.hero-card{
-  width:100%;max-width:var(--maxw);background:var(--surface);border-radius:18px;box-shadow:var(--shadow);display:flex;gap:24px;padding:28px;align-items:center;
-  transform-style:preserve-3d;
+.hero {
+  padding-top: 40px; /* antes 70px */
+  padding-bottom: 20px; /* antes 40px */
 }
-.hero-left{flex:0 0 120px;display:flex;align-items:center;justify-content:center}
-.avatar{
-  width:100px;height:100px;border-radius:16px;background:linear-gradient(135deg,var(--primary),var(--accent));display:flex;align-items:center;justify-content:center;color:white;font-weight:800;font-size:28px;letter-spacing:0.6px;
-  box-shadow: 0 8px 20px rgba(4, 28, 64, 0.12);
-}
-.hero-right{flex:1}
-.name{font-size:28px;margin-bottom:6px}
-.name span{color:var(--primary)}
-.tagline{color:var(--muted);margin-bottom:12px;font-size:15px;max-width:70%}
-.cta{display:flex;gap:12px;align-items:center}
-.btn{background:var(--primary);color:white;padding:10px 14px;border-radius:10px;border:none;cursor:pointer;font-weight:700;transition:all .18s ease;box-shadow: 0 6px 18px rgba(6,24,80,0.06)}
-.btn:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(6,24,80,0.08)}
-.btn-outline{background:transparent;border:2px solid var(--primary);color:var(--primary)}
-.quick-meta{margin-top:10px;color:var(--muted);font-size:13px}
 
 /* SECTIONS */
-.section{max-width:var(--maxw);margin:40px auto;padding:20px}
-.section h2{font-size:20px;color:var(--primary);margin-bottom:8px}
-.section-sub{color:var(--muted);margin-bottom:16px}
+.section {
+  max-width: var(--maxw);
+  margin: 20px auto; /* antes 40px */
+  padding: 10px 20px; /* antes 20px */
+}
 
 /* PROJECTS */
-.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
-.project-card{background:linear-gradient(180deg, rgba(255,255,255,0.9), rgba(248,252,255,0.85));border-radius:12px;padding:18px;box-shadow: 0 8px 20px rgba(6,24,80,0.04);transition:transform .25s ease, box-shadow .25s ease;border:1px solid rgba(6,100,214,0.06)}
-.project-card:hover{transform:translateY(-8px);box-shadow: 0 18px 40px rgba(6,24,80,0.09)}
-.project-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
-.pill{background:rgba(0,210,255,0.08);color:var(--primary);padding:6px 10px;border-radius:999px;font-weight:700;font-size:12px}
-.project-actions a{color:var(--accent);text-decoration:none;font-weight:700}
-.muted{color:var(--muted)}
-.small{font-size:13px;color:var(--muted)}
+.projects-grid {
+  gap: 12px; /* antes 18px */
+}
 
-/* HABILIDADES */
-.skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.skills-block{background:transparent;padding:8px}
-.skills-block h4{color:var(--primary);margin-bottom:8px}
-.skills-block ul{list-style:none;color:var(--muted);line-height:1.7}
-
-/* EDUCACION */
-.edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.edu-card{background:var(--surface);padding:14px;border-radius:10px;box-shadow:0 8px 18px rgba(6,24,80,0.04)}
+/* SKILLS & EDUCATION */
+.skills-grid,
+.edu-grid {
+  gap: 12px; /* antes 18px */
+}
 
 /* CONTACTO */
-.contact-form{max-width:640px;margin:18px auto;display:flex;flex-direction:column;gap:10px}
-.contact-form input,.contact-form textarea{padding:10px;border-radius:8px;border:1px solid #e6eefb;background:transparent;outline:none}
-.contact-form button{width:160px}
+.contact-form {
+  margin: 12px auto; /* antes 18px */
+  gap: 8px; /* antes 10px */
+}
 
 /* RESPONSIVE */
 @media (max-width:900px){
