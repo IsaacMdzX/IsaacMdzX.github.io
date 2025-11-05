@@ -19,6 +19,21 @@ body {
   color: var(--text);
   line-height: 1.7;
   overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* === ANIMACIONES === */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 10px rgba(0, 229, 255, 0.1); }
+  50% { box-shadow: 0 0 20px rgba(0, 229, 255, 0.4); }
 }
 
 /* HERO */
@@ -27,6 +42,7 @@ body {
   padding: 80px 25px 60px;
   background: radial-gradient(circle at 20% 30%, #0f2742 0%, var(--bg) 80%);
   box-shadow: var(--shadow);
+  animation: fadeIn 1s ease forwards;
 }
 .hero-content h1 {
   font-size: 2.5em;
@@ -41,11 +57,13 @@ body {
   margin: 0 auto 25px;
   font-size: 1.05em;
   opacity: 0.9;
+  animation: fadeIn 1.3s ease;
 }
 .hero-buttons {
   display: flex;
   justify-content: center;
   gap: 12px;
+  animation: fadeIn 1.5s ease;
 }
 .btn {
   background: var(--primary);
@@ -60,6 +78,7 @@ body {
   transform: scale(1.05);
   background: var(--accent);
   color: #fff;
+  animation: pulseGlow 1s infinite;
 }
 .btn.secondary {
   background: #1a1f2e;
@@ -79,9 +98,13 @@ body {
   border-radius: 12px;
   box-shadow: var(--shadow);
   transition: 0.3s;
+  opacity: 0;
+  transform: translateY(40px);
 }
-.section:hover {
-  transform: translateY(-3px);
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
+  animation: slideUp 0.8s ease forwards;
 }
 .section h2 {
   color: var(--primary);
@@ -122,11 +145,18 @@ body {
   border-radius: 10px;
   padding: 18px;
   box-shadow: 0 0 10px rgba(0, 229, 255, 0.08);
-  transition: 0.3s;
+  transition: 0.4s ease;
+  opacity: 0;
+  transform: translateY(40px);
+}
+.card.visible {
+  opacity: 1;
+  transform: translateY(0);
+  animation: slideUp 0.8s ease forwards;
 }
 .card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 0 15px rgba(0, 229, 255, 0.25);
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.35);
 }
 .card h3 {
   color: var(--accent);
