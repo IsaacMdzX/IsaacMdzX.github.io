@@ -1,39 +1,47 @@
+/* ----------------- Variables ------------------ */
 :root {
-  --main-color: #0078ff;
-  --bg-dark: #0b0c10;
-  --text-light: #ffffff;
+  --primary: #00d4ff;
+  --secondary: #0078ff;
+  --dark-bg: #0a0a0a;
+  --light-bg: #f5f5f5;
   --text-dark: #222;
+  --text-light: #fff;
 }
 
+/* ----------------- Global ------------------ */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: 'Poppins', sans-serif;
 }
 
 body {
-  font-family: "Segoe UI", sans-serif;
-  background-color: #f9f9f9;
-  color: var(--text-dark);
-  scroll-behavior: smooth;
+  background: var(--dark-bg);
+  color: var(--text-light);
+  transition: background 0.6s, color 0.6s;
 }
 
-/* --- Navbar --- */
+header {
+  position: fixed;
+  width: 100%;
+  background: rgba(10, 10, 10, 0.85);
+  backdrop-filter: blur(10px);
+  z-index: 100;
+}
+
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--bg-dark);
-  color: var(--text-light);
   padding: 1rem 2rem;
-  position: sticky;
-  top: 0;
-  z-index: 10;
 }
 
 .logo {
+  color: var(--primary);
   font-size: 1.5rem;
-  font-weight: bold;
+  letter-spacing: 1px;
 }
 
 .nav-links {
@@ -45,47 +53,47 @@ body {
 .nav-links a {
   color: var(--text-light);
   text-decoration: none;
-  transition: 0.3s;
+  transition: color 0.3s;
 }
 
 .nav-links a:hover {
-  color: var(--main-color);
+  color: var(--primary);
 }
 
-/* --- Home --- */
+/* ----------------- Home ------------------ */
 .home {
   height: 100vh;
-  background: linear-gradient(to right, #0b0c10, #1f2833);
-  color: var(--text-light);
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   text-align: center;
   padding: 2rem;
 }
 
 .home h2 span {
-  color: var(--main-color);
+  color: var(--primary);
 }
 
 .btn {
   display: inline-block;
   margin-top: 1rem;
-  padding: 0.75rem 1.5rem;
-  background-color: var(--main-color);
-  color: white;
-  border-radius: 25px;
+  padding: 0.8rem 1.5rem;
+  background: var(--primary);
+  color: black;
+  border-radius: 30px;
   text-decoration: none;
-  transition: 0.3s;
+  font-weight: bold;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .btn:hover {
-  background-color: #005fcc;
+  transform: translateY(-4px);
+  box-shadow: 0 0 15px var(--primary);
 }
 
-/* --- Sections --- */
-section {
-  padding: 4rem 2rem;
+/* ----------------- Sections ------------------ */
+.section {
+  padding: 5rem 2rem;
   max-width: 1000px;
   margin: auto;
 }
@@ -93,65 +101,83 @@ section {
 h2 {
   text-align: center;
   margin-bottom: 2rem;
-  color: var(--main-color);
+  color: var(--primary);
 }
 
-/* --- Skills --- */
-.skills-container {
+/* ----------------- Skills ------------------ */
+.skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 1rem;
+  gap: 1.5rem;
 }
 
-.skill-card {
-  background-color: white;
-  border-radius: 10px;
-  padding: 1rem;
+.skill {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   text-align: center;
-  font-weight: bold;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s;
+  padding: 1rem;
+  border-radius: 10px;
+  transition: transform 0.3s, background 0.3s;
 }
 
-.skill-card:hover {
+.skill:hover {
   transform: translateY(-5px);
+  background: rgba(0, 212, 255, 0.2);
 }
 
-/* --- Projects --- */
-.project-list {
+/* ----------------- Projects ------------------ */
+.project-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
 }
 
 .project-card {
-  background-color: white;
-  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   padding: 2rem;
-  text-align: center;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
-  transition: transform 0.3s;
+  border-radius: 15px;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .project-card:hover {
-  transform: scale(1.03);
+  transform: translateY(-6px);
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
 }
 
 .project-card a {
-  color: var(--main-color);
+  color: var(--primary);
   text-decoration: none;
   font-weight: bold;
 }
 
-/* --- Contact --- */
+/* ----------------- Contact ------------------ */
 .contact {
   text-align: center;
 }
 
-/* --- Footer --- */
+/* ----------------- Footer ------------------ */
 footer {
   text-align: center;
-  background-color: var(--bg-dark);
-  color: var(--text-light);
   padding: 1rem;
+  background: rgba(10, 10, 10, 0.9);
+  color: var(--text-light);
+  font-size: 0.9rem;
+}
+
+/* ----------------- Background Canvas ------------------ */
+#bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+/* ----------------- Responsive ------------------ */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
 }
