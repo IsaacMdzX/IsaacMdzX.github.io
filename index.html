@@ -4,6 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>CV — Carlos Isaac</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
   <style>
     :root{
       --bg:#f8fbff; --card:#ffffff; --accent:#0b66ff; --muted:#6b7280; --text:#0f1724;
@@ -32,15 +33,15 @@
     .side{padding:18px;border-left:1px dashed #f1f5f9}
     .side h4{margin:0 0 8px}
     .meta{font-size:14px;color:var(--muted);margin-bottom:10px}
-    .btn{display:inline-block;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:600}
-    .btn-primary{background:var(--accent);color:white}
+    .btn{display:inline-block;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:600;cursor:pointer}
+    .btn-primary{background:var(--accent);color:white;border:none}
     .small{font-size:13px;color:var(--muted)}
     footer{padding:18px;text-align:center;color:var(--muted);font-size:13px}
     @media (max-width:880px){.main{grid-template-columns:1fr} .side{border-left:none;border-top:1px dashed #f1f5f9;padding-top:18px}}
   </style>
 </head>
 <body>
-  <div class="container">
+  <div class="container" id="cv-container">
     <div class="card">
       <div class="header">
         <div class="avatar">CI</div>
@@ -76,14 +77,12 @@
               <strong>Tienda Gamer</strong>
               <p class="small">Plataforma de comercio electrónico para venta de accesorios, juegos y consolas. En desarrollo, incluye integración de backbone.js para parte del frontend y consumo de APIs de pago.</p>
               <p class="small"><strong>Tecnologías:</strong> HTML, CSS, JavaScript, Backbone.js, Python (backend).</p>
-              <p class="small"><strong>Repositorio:</strong> <a href="https://github.com/IsaacMdzX" target="_blank">github.com/IsaacMdzX</a></p>
             </div>
 
             <div class="project">
               <strong>Analizador Léxico</strong>
               <p class="small">Herramienta en desarrollo para la corrección y análisis de texto (lógica y ortografía). Será útil para detectar errores y sugerir mejoras en el contenido.</p>
               <p class="small"><strong>Tecnologías:</strong> Python, Flask, HTML, CSS, JavaScript.</p>
-              <p class="small"><strong>Estado:</strong> Desarrollo activo.</p>
             </div>
 
             <div class="project">
@@ -91,7 +90,6 @@
               <p class="small">Colección de ejercicios y prácticas en Java para afianzar conceptos básicos y estructuras de datos.</p>
               <p class="small"><strong>Tecnologías:</strong> Java.</p>
             </div>
-
           </div>
 
           <div class="section">
@@ -113,7 +111,6 @@
             <h3>Intereses y Pasatiempos</h3>
             <p class="small">Música, museos, tecnología, aprendizaje continuo, experiencias culturales.</p>
           </div>
-
         </div>
 
         <aside class="side">
@@ -155,19 +152,29 @@
 
           <div class="section">
             <h4>Descargar CV</h4>
-            <p class="small">Si quieres, puedo generar una versión en PDF lista para descargar o cambiar el estilo a oscuro.</p>
-            <div style="margin-top:10px">
-              <a class="btn btn-primary" href="#">Solicitar PDF</a>
-            </div>
+            <button class="btn btn-primary" id="download-btn">Descargar PDF</button>
           </div>
-
         </aside>
       </div>
 
       <footer>
-        © Carlos Isaac — CV generado para portafolio web. Edita cualquier sección en el archivo HTML para personalizarlo.
+        © Carlos Isaac — CV generado para portafolio web.
       </footer>
     </div>
   </div>
+
+  <script>
+    document.getElementById('download-btn').addEventListener('click', () => {
+      const element = document.getElementById('cv-container');
+      const opt = {
+        margin: 0.4,
+        filename: 'Carlos_Isaac_CV.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+      };
+      html2pdf().set(opt).from(element).save();
+    });
+  </script>
 </body>
 </html>
