@@ -3,42 +3,13 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>CV — Carlos Isaac</title>
+  <title>CV — Carlos Méndez</title>
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Librería para generar PDF -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-  <style>
-    :root{
-      --bg:#f8fbff; --card:#ffffff; --accent:#0b66ff; --muted:#6b7280; --text:#0f1724;
-      --radius:14px;
-      --shadow: 0 8px 24px rgba(15,23,36,0.07);
-      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-    }
-    *{box-sizing:border-box}
-    body{margin:0;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
-    .container{max-width:1000px;margin:32px auto;padding:20px}
-    .card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
-    .header{display:flex;gap:20px;padding:28px;align-items:center}
-    .avatar{width:110px;height:110px;border-radius:16px;background:linear-gradient(135deg,var(--accent),#4ea1ff);display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:34px}
-    .title h1{margin:0;font-size:28px}
-    .title p{margin:6px 0 0;color:var(--muted);line-height:1.4}
-    .links{margin-top:12px;display:flex;gap:10px;flex-wrap:wrap}
-    .chip{padding:8px 12px;border-radius:999px;background:#f1f5f9;color:var(--text);font-size:13px;text-decoration:none}
-    .main{display:grid;grid-template-columns:1fr 320px;gap:20px;padding:20px;border-top:1px solid #eef4ff}
-    .section{margin-bottom:18px}
-    h3{margin:0 0 10px;font-size:16px}
-    p{margin:0;color:#111827}
-    .skills{display:flex;flex-wrap:wrap;gap:8px}
-    .skill{background:#eef6ff;padding:8px 10px;border-radius:8px;font-size:13px}
-    .project{background:#fbfdff;padding:12px;border-radius:10px;margin-bottom:10px;border:1px solid #eef4ff}
-    .project a{color:var(--accent);text-decoration:none}
-    .side{padding:18px;border-left:1px dashed #f1f5f9}
-    .side h4{margin:0 0 8px}
-    .meta{font-size:14px;color:var(--muted);margin-bottom:10px}
-    .btn{display:inline-block;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:600;cursor:pointer}
-    .btn-primary{background:var(--accent);color:white;border:none}
-    .small{font-size:13px;color:var(--muted)}
-    footer{padding:18px;text-align:center;color:var(--muted);font-size:13px}
-    @media (max-width:880px){.main{grid-template-columns:1fr} .side{border-left:none;border-top:1px dashed #f1f5f9;padding-top:18px}}
-  </style>
 </head>
 <body>
   <div class="container" id="cv-container">
@@ -70,25 +41,23 @@
               <strong>Tienda de Sneakers</strong>
               <p class="small">Tienda en línea desarrollada para un cliente local para modernizar su negocio. Incluye catálogo, carrito y pasarela de pago.</p>
               <p class="small"><strong>Tecnologías:</strong> Python, Flask, HTML, CSS, JavaScript, integración de APIs de pago.</p>
-              <p class="small"><strong>Repositorio:</strong> <a href="https://github.com/IsaacMdzX" target="_blank">github.com/IsaacMdzX</a></p>
             </div>
 
             <div class="project">
               <strong>Tienda Gamer</strong>
-              <p class="small">Plataforma de comercio electrónico para venta de accesorios, juegos y consolas. En desarrollo, incluye integración de backbone.js para parte del frontend y consumo de APIs de pago.</p>
-              <p class="small"><strong>Tecnologías:</strong> HTML, CSS, JavaScript, Backbone.js, Python (backend).</p>
+              <p class="small">Plataforma de comercio electrónico para venta de accesorios, juegos y consolas. En desarrollo, incluye integración de backbone.js y consumo de APIs de pago.</p>
+              <p class="small"><strong>Tecnologías:</strong> HTML, CSS, JavaScript, Backbone.js, Python.</p>
             </div>
 
             <div class="project">
               <strong>Analizador Léxico</strong>
-              <p class="small">Herramienta en desarrollo para la corrección y análisis de texto (lógica y ortografía). Será útil para detectar errores y sugerir mejoras en el contenido.</p>
+              <p class="small">Herramienta en desarrollo para la corrección y análisis de texto (lógica y ortografía). Útil para detectar errores y sugerir mejoras.</p>
               <p class="small"><strong>Tecnologías:</strong> Python, Flask, HTML, CSS, JavaScript.</p>
             </div>
 
             <div class="project">
               <strong>Pequeñas prácticas en Java</strong>
               <p class="small">Colección de ejercicios y prácticas en Java para afianzar conceptos básicos y estructuras de datos.</p>
-              <p class="small"><strong>Tecnologías:</strong> Java.</p>
             </div>
           </div>
 
@@ -99,12 +68,12 @@
 
           <div class="section">
             <h3>Certificaciones y Cursos</h3>
-            <p class="small">Cursos de Python, Java, bases de datos y Flask. Certificados de Python, Java y SQL en SoloLearn. Curso adicional sobre Inteligencia Artificial.</p>
+            <p class="small">Cursos de Python, Java, bases de datos y Flask. Certificados de Python, Java y SQL en SoloLearn. Curso sobre Inteligencia Artificial.</p>
           </div>
 
           <div class="section">
             <h3>Experiencia</h3>
-            <p class="small">Prácticas en resolución de problemas sencillos y desarrollo de aplicaciones o páginas web para personas cercanas (amigos y conocidos). También impartición de clases básicas sobre bases de datos.</p>
+            <p class="small">Prácticas en resolución de problemas sencillos y desarrollo de aplicaciones o páginas web para personas cercanas. Impartición de clases básicas sobre bases de datos.</p>
           </div>
 
           <div class="section">
@@ -116,21 +85,12 @@
         <aside class="side">
           <div class="section">
             <h4>Habilidades Técnicas</h4>
-            <div class="skills" style="margin-top:10px">
-              <span class="skill">Flask</span>
-              <span class="skill">Flutter</span>
-              <span class="skill">GitHub</span>
-              <span class="skill">Git Bash</span>
-              <span class="skill">HTML</span>
-              <span class="skill">CSS</span>
-              <span class="skill">JavaScript</span>
-              <span class="skill">Java</span>
-              <span class="skill">C++</span>
-              <span class="skill">C#</span>
-              <span class="skill">Python</span>
-              <span class="skill">C</span>
-              <span class="skill">MySQL</span>
-              <span class="skill">PostgreSQL</span>
+            <div class="skills">
+              <span class="skill">Flask</span><span class="skill">Flutter</span><span class="skill">GitHub</span>
+              <span class="skill">Git Bash</span><span class="skill">HTML</span><span class="skill">CSS</span>
+              <span class="skill">JavaScript</span><span class="skill">Java</span><span class="skill">C++</span>
+              <span class="skill">C#</span><span class="skill">Python</span><span class="skill">C</span>
+              <span class="skill">MySQL</span><span class="skill">PostgreSQL</span>
             </div>
           </div>
 
@@ -142,12 +102,6 @@
           <div class="section">
             <h4>Idiomas</h4>
             <p class="meta">Español — Nativo</p>
-          </div>
-
-          <div class="section">
-            <h4>Contacto</h4>
-            <p class="meta">isaacmdz.music29a@gmail.com</p>
-            <p class="meta"><a href="https://github.com/IsaacMdzX" target="_blank">github.com/IsaacMdzX</a></p>
           </div>
 
           <div class="section">
@@ -163,18 +117,7 @@
     </div>
   </div>
 
-  <script>
-    document.getElementById('download-btn').addEventListener('click', () => {
-      const element = document.getElementById('cv-container');
-      const opt = {
-        margin: 0.4,
-        filename: 'Carlos_Isaac_CV.pdf',
-        image: { type: 'jpeg', quality: 0.98 },
-        html2canvas: { scale: 2 },
-        jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
-      };
-      html2pdf().set(opt).from(element).save();
-    });
-  </script>
+  <!-- Script externo -->
+  <script src="script.js"></script>
 </body>
 </html>
