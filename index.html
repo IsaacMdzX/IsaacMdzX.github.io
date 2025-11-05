@@ -1,88 +1,114 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portafolio de Carlos Isaac Méndez</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Portafolio — Carlos Isaac</title>
+
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- SECCIÓN PRINCIPAL (Hero) -->
+  <!-- HERO (sin menú superior) -->
   <section class="hero" id="inicio">
     <div class="hero-content">
       <h1>Carlos Isaac Méndez</h1>
-      <p>Estudiante de Ingeniería en Sistemas Computacionales. Apasionado por el desarrollo web, APIs y aplicaciones con Flask y Flutter.</p>
+      <p class="lead">Estudiante de Ingeniería en Sistemas Computacionales. Desarrollo web, APIs y apps (Flask / Flutter). Me interesa crear soluciones prácticas y aprender nuevas técnicas.</p>
+
       <div class="hero-buttons">
-        <a href="https://github.com/IsaacMdzX" class="btn" target="_blank">GitHub</a>
+        <a href="https://github.com/IsaacMdzX" class="btn" target="_blank" rel="noopener">GitHub</a>
         <a href="mailto:isaacmdz.music29a@gmail.com" class="btn secondary">Contacto</a>
         <button id="downloadPDF" class="btn pdf">Descargar CV</button>
       </div>
+
+      <p class="meta">🎓 Tecnológico Nacional de México — Campus Iztapalapa · ISC (2022 — Actualidad)</p>
     </div>
   </section>
 
-  <!-- CONTENIDO DEL CV -->
-  <main id="cv-content">
+  <!-- CONTENIDO QUE SE EXPORTA AL PDF -->
+  <main id="cv-content" class="cv-wrap">
     <section class="section">
       <h2>Sobre mí</h2>
-      <p>Estudiante de Ingeniería en Sistemas Computacionales en el Tecnológico Nacional de México Campus Iztapalapa. Me interesa el desarrollo de software, inteligencia artificial y el diseño de interfaces modernas.</p>
-    </section>
-
-    <section class="section">
-      <h2>Habilidades Técnicas</h2>
-      <ul class="skills-grid">
-        <li>Python</li><li>Flask</li><li>Flutter</li><li>GitHub</li><li>HTML</li>
-        <li>CSS</li><li>JavaScript</li><li>Java</li><li>C++</li><li>C#</li><li>SQL</li>
-        <li>MySQL</li><li>PostgreSQL</li>
-      </ul>
+      <p>Estudiante de Ingeniería en Sistemas Computacionales, enfocado en desarrollo web, APIs, interfaces y apps móviles. Experiencia construyendo tiendas en línea y herramientas con Python/Flask; practico con Flutter para apps móviles. Me gusta visitar museos, aprender y aplicar nuevas técnicas.</p>
     </section>
 
     <section class="section">
       <h2>Proyectos</h2>
       <div class="projects-grid">
-        <div class="card">
+        <article class="project">
           <h3>Tienda de Sneakers</h3>
-          <p>Tienda en línea para un cliente local. Desarrollada con Python, Flask, HTML, CSS y JS, incluyendo integración de pagos.</p>
-          <a href="#" class="https://github.com/IsaacMdzX/ProyectoIngdeSoftware">Ver proyecto</a>
-        </div>
-        <div class="card">
+          <p class="muted">Tienda en línea desarrollada para un cliente local: catálogo, carrito, gestión de inventario y pasarela de pago.</p>
+          <p class="small"><strong>Tecnologías:</strong> Python, Flask, HTML, CSS, JavaScript — Integración de API de pagos.</p>
+          <a class="link" href="https://github.com/IsaacMdzX/ProyectoIngdeSoftware" target="_blank" rel="noopener">Ver código en GitHub</a>
+        </article>
+
+        <article class="project">
           <h3>Tienda Gamer</h3>
-          <p>Plataforma en desarrollo para venta de accesorios y consolas. Uso de Backbone.js, Flask y APIs de pago.</p>
-          <a href="#" class="https://github.com/Seuahjvyz/GameStore">Ver proyecto</a>
-        </div>
-        <div class="card">
+          <p class="muted">E-commerce para accesorios, juegos y consolas. Frontend parcial con Backbone.js; backend en Python. En desarrollo.</p>
+          <p class="small"><strong>Tecnologías:</strong> HTML, CSS, JavaScript, Backbone.js, Python.</p>
+          <a class="link" href="https://github.com/Seuahjvyz/GameStore" target="_blank" rel="noopener">Ver código en GitHub</a>
+        </article>
+
+        <article class="project">
           <h3>Analizador Léxico</h3>
-          <p>Herramienta para corrección de texto y lógica gramatical. Desarrollada con Flask, Python y JS.</p>
-          <a href="#" class="https://github.com/IsaacMdzX/AnaliszadorL-xico">Ver proyecto</a>
+          <p class="muted">Herramienta para análisis y corrección de texto (ortografía y lógica). Prototipo con backend en Flask y procesado con Python.</p>
+          <p class="small"><strong>Tecnologías:</strong> Python, Flask, HTML, JS.</p>
+          <a class="link" href="https://github.com/IsaacMdzX/AnaliszadorL-xico" target="_blank" rel="noopener">Ver código en GitHub</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Habilidades</h2>
+      <div class="skills-grid">
+        <div class="skills-block">
+          <h4>Técnicas</h4>
+          <ul>
+            <li>Flask · Flutter · Git · Git Bash</li>
+            <li>HTML · CSS · JavaScript · Backbone.js</li>
+            <li>Python · Java · C++ · C# · C</li>
+            <li>MySQL · PostgreSQL</li>
+          </ul>
+        </div>
+
+        <div class="skills-block">
+          <h4>Blandas</h4>
+          <ul>
+            <li>Buena comunicación · Trabajo en equipo · Liderazgo</li>
+            <li>Adaptabilidad · Empatía · Compromiso</li>
+          </ul>
         </div>
       </div>
     </section>
 
     <section class="section">
       <h2>Educación</h2>
-      <p><strong>Tecnológico Nacional de México Campus Iztapalapa</strong><br>Ingeniería en Sistemas Computacionales (2022 - Actualidad)</p>
+      <p><strong>Tecnológico Nacional de México — Campus Iztapalapa</strong><br>Ingeniería en Sistemas Computacionales (2022 — Actualidad)</p>
     </section>
 
     <section class="section">
       <h2>Certificaciones y Cursos</h2>
       <ul>
-        <li>Curso de Python - SoloLearn</li>
-        <li>Curso de Java - SoloLearn</li>
-        <li>Curso de SQL - SoloLearn</li>
-        <li>Curso de Flask</li>
-        <li>Curso de Inteligencia Artificial</li>
+        <li>Certificados en SoloLearn: Python, Java, SQL</li>
+        <li>Cursos: Flask, Bases de Datos, Inteligencia Artificial</li>
       </ul>
     </section>
 
     <section class="section">
       <h2>Experiencia</h2>
-      <p>Desarrollo de aplicaciones web y proyectos personales para clientes cercanos, además de prácticas y ejercicios en Java y Python.</p>
+      <p>Desarrollo de páginas y aplicaciones para clientes locales y conocidos; prácticas enfocadas en resolución de problemas y desarrollo full-stack básico.</p>
+    </section>
+
+    <section class="section contact-section">
+      <h2>Contacto</h2>
+      <p class="muted">📧 <a href="mailto:isaacmdz.music29a@gmail.com">isaacmdz.music29a@gmail.com</a> · 🌐 <a href="https://github.com/IsaacMdzX" target="_blank" rel="noopener">github.com/IsaacMdzX</a></p>
     </section>
   </main>
 
   <footer>
-    <p>© 2025 Carlos Isaac Méndez</p>
+    <p>© 2025 Carlos Isaac — Portafolio</p>
   </footer>
 
+  <!-- html2pdf (para descargar) -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
   <script src="script.js"></script>
 </body>
