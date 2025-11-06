@@ -18,7 +18,7 @@ document.getElementById("downloadPDF").addEventListener("click", async () => {
   doc.setTextColor(255, 255, 255);
   doc.setFont("helvetica", "bold");
   doc.setFontSize(22);
-  doc.text("Carlos Isaac Méndez", 105, 15, { align: "center" });
+  doc.text("Carlos Isaac Méndez Davila", 105, 15, { align: "center" });
 
   doc.setFont("helvetica", "normal");
   doc.setFontSize(11);
@@ -28,9 +28,9 @@ document.getElementById("downloadPDF").addEventListener("click", async () => {
   let y = 35;
   doc.setTextColor(...grisOscuro);
   doc.setFontSize(10);
-  doc.text("📧  isaacmdz.music29a@gmail.com", 20, y);
+  doc.text("📧isaacmdz.music29a@gmail.com", 20, y);
   y += 6;
-  doc.text("💻  github.com/IsaacMdzX", 20, y);
+  doc.text("💻github.com/IsaacMdzX", 20, y);
 
   // Línea divisoria
   y += 8;
