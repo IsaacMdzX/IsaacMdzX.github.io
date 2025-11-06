@@ -13,65 +13,101 @@ body {
   overflow-x: hidden;
 }
 
-/* ==== HERO / PORTADA ==== */
+/* ===== SECCIÓN HERO (PRESENTACIÓN) ===== */
 .hero {
   text-align: center;
-  padding: 70px 20px; /* menos alto (antes ~120px) */
+  padding: 60px 20px; /* antes era más alto, ahora más compacto */
   background: radial-gradient(circle at top, #0b0f1a, #05070d);
   color: #e0e6f0;
+  min-height: 70vh; /* reduce altura visual */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-/* Título principal */
+/* ==== TEXTO PRINCIPAL ==== */
+.hero-content {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
 .hero h1 {
-  font-size: 2.3rem; /* más compacto */
+  font-size: 2.5rem; /* ligeramente más pequeño */
   font-weight: 700;
-  margin-bottom: 8px;
-  color: #1ec0ff; /* mantiene tono azul si lo tenías */
+  margin-bottom: 10px;
+  color: #1ec0ff;
 }
 
-/* Descripción */
 .hero p {
   font-size: 1rem;
-  max-width: 680px;
-  margin: 0 auto 15px;
   line-height: 1.6;
+  max-width: 650px;
+  margin: 0 auto 20px;
   color: #d1d5db;
 }
 
-/* Botones: conservamos su estilo original */
+/* ===== BOTONES (SE MANTIENEN IGUALES) ===== */
 .hero-buttons {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 10px; /* menos separación */
+  gap: 15px;
 }
 
-/* Mantiene tus estilos previos */
+/* Mismo estilo que ya tenías */
 .hero-buttons .btn {
-  padding: 10px 20px;
-  font-size: 0.95rem;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
   border-radius: 25px;
-  font-weight: 500;
+  cursor: pointer;
   transition: all 0.3s ease;
 }
 
-.hero-buttons .btn.pdf {
-  background: #00e676;
-  color: #0a0a0a;
+/* Mantiene los colores actuales */
+.btn {
+  background: linear-gradient(90deg, #00aaff, #0091ff);
+  color: white;
 }
 
-.hero-buttons .btn.secondary {
+.btn.secondary {
   background: transparent;
-  border: 1px solid #00aaff;
+  border: 2px solid #00aaff;
   color: #e0e6f0;
 }
 
-.hero-buttons .btn:hover {
+.btn.pdf {
+  background: linear-gradient(90deg, #00ff99, #00cc77);
+  color: #0b0f1a;
+}
+
+/* Hover original */
+.btn:hover {
   transform: scale(1.05);
   filter: brightness(1.15);
 }
 
+/* ===== ADAPTACIÓN MÓVIL ===== */
+@media (max-width: 600px) {
+  .hero {
+    padding: 40px 15px;
+    min-height: 60vh;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 0.95rem;
+  }
+
+  .hero-buttons .btn {
+    font-size: 0.9rem;
+    padding: 10px 20px;
+  }
+}
 
 /* ===== SECCIONES ===== */
 .section {
