@@ -28,9 +28,9 @@ document.getElementById("downloadPDF").addEventListener("click", async () => {
   let y = 35;
   doc.setTextColor(...grisOscuro);
   doc.setFontSize(10);
-  doc.text("📧isaacmdz.music29a@gmail.com", 20, y);
+  doc.text("Correo contacto:isaacmdz.music29a@gmail.com", 20, y);
   y += 6;
-  doc.text("💻github.com/IsaacMdzX", 20, y);
+  doc.text("Github:github.com/IsaacMdzX", 20, y);
 
   // Línea divisoria
   y += 8;
