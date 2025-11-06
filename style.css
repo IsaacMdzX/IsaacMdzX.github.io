@@ -13,36 +13,63 @@ body {
   overflow-x: hidden;
 }
 
-/* ==== Sección principal (hero) ajustada ==== */
+/* ==== HERO / PORTADA ==== */
 .hero {
   text-align: center;
-  padding: 80px 20px; /* antes quizá 120px o más */
+  padding: 70px 20px; /* menos alto (antes ~120px) */
+  background: radial-gradient(circle at top, #0b0f1a, #05070d);
+  color: #e0e6f0;
 }
 
+/* Título principal */
 .hero h1 {
-  font-size: 2.4rem; /* antes 3rem aprox */
-  margin-bottom: 10px;
+  font-size: 2.3rem; /* más compacto */
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #1ec0ff; /* mantiene tono azul si lo tenías */
 }
 
+/* Descripción */
 .hero p {
-  font-size: 1rem; /* antes 1.2rem */
-  max-width: 700px;
-  margin: 0 auto 20px;
+  font-size: 1rem;
+  max-width: 680px;
+  margin: 0 auto 15px;
   line-height: 1.6;
+  color: #d1d5db;
 }
 
-.hero .buttons {
+/* Botones: conservamos su estilo original */
+.hero-buttons {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 12px;
-  margin-top: 10px; /* antes 20px */
+  margin-top: 10px; /* menos separación */
 }
 
-.hero .buttons a {
-  font-size: 0.9rem; /* botones más pequeños */
-  padding: 10px 18px;
+/* Mantiene tus estilos previos */
+.hero-buttons .btn {
+  padding: 10px 20px;
+  font-size: 0.95rem;
   border-radius: 25px;
   font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.hero-buttons .btn.pdf {
+  background: #00e676;
+  color: #0a0a0a;
+}
+
+.hero-buttons .btn.secondary {
+  background: transparent;
+  border: 1px solid #00aaff;
+  color: #e0e6f0;
+}
+
+.hero-buttons .btn:hover {
+  transform: scale(1.05);
+  filter: brightness(1.15);
 }
 
 
