@@ -2,161 +2,95 @@ document.getElementById("downloadPDF").addEventListener("click", async () => {
   const { jsPDF } = window.jspdf;
   const doc = new jsPDF({ orientation: "portrait", unit: "mm", format: "a4" });
 
-  const margin = 15;
-  let y = 25;
-  const lineColor = [0, 102, 204];
+  const margin = 20;
+  let y = 30;
+  const azul = [0, 122, 255];
+  const gris = [60, 60, 60];
 
-  // === ENCABEZADO ===
-  doc.setFillColor(0, 102, 204);
+  // Encabezado
+  doc.setFillColor(...azul);
   doc.rect(0, 0, 210, 25, "F");
+  doc.setTextColor(255, 255, 255);
   doc.setFont("helvetica", "bold");
   doc.setFontSize(20);
-  doc.setTextColor(255, 255, 255);
   doc.text("Carlos Isaac Méndez", margin, 17);
-  doc.setFontSize(11);
   doc.setFont("helvetica", "normal");
+  doc.setFontSize(11);
   doc.text("Estudiante de Ingeniería en Sistemas Computacionales", margin, 23);
 
-  // === INFORMACIÓN DE CONTACTO ===
-  y += 10;
+  // Contacto
+  y += 15;
+  doc.setTextColor(...gris);
   doc.setFontSize(10);
-  doc.setTextColor(80);
-  doc.text("📧  isaacmdz.music29a@gmail.com", margin, y);
+  doc.text("📧 isaacmdz.music29a@gmail.com", margin, y);
   y += 5;
-  doc.text("💻  github.com/IsaacMdzX", margin, y);
+  doc.text("💻 github.com/IsaacMdzX", margin, y);
   y += 10;
 
-  // === PERFIL PROFESIONAL ===
-  doc.setDrawColor(...lineColor);
-  doc.setLineWidth(0.5);
-  doc.line(margin, y, 195, y);
-  y += 8;
-  doc.setFont("helvetica", "bold");
-  doc.setFontSize(14);
-  doc.setTextColor(...lineColor);
-  doc.text("Perfil Profesional", margin, y);
-  y += 7;
-  doc.setFont("helvetica", "normal");
-  doc.setFontSize(11);
-  doc.setTextColor(0);
-  const perfil = `Soy estudiante de Ingeniería en Sistemas Computacionales con interés en el desarrollo web, 
-creación de APIs, desarrollo de interfaces y aplicaciones con Flask y Flutter. 
-Me motiva aprender nuevas tecnologías, trabajar en equipo y resolver problemas con creatividad.`;
-  const perfilText = doc.splitTextToSize(perfil, 180);
-  doc.text(perfilText, margin, y);
-  y += perfilText.length * 6 + 6;
-
-  // === HABILIDADES TÉCNICAS ===
-  doc.setDrawColor(...lineColor);
-  doc.line(margin, y, 195, y);
-  y += 8;
-  doc.setFont("helvetica", "bold");
-  doc.setTextColor(...lineColor);
-  doc.text("Habilidades Técnicas", margin, y);
-  y += 7;
-  doc.setFont("helvetica", "normal");
-  doc.setTextColor(0);
-  const tecnicas = [
-    "Python", "Flask", "Flutter", "Git", "GitHub",
-    "HTML", "CSS", "JavaScript", "Java", "C++", "C#", "C",
-    "MySQL", "PostgreSQL"
-  ];
-  doc.text(tecnicas.join(" • "), margin, y);
-  y += 12;
-
-  // === HABILIDADES BLANDAS ===
-  doc.setDrawColor(...lineColor);
-  doc.line(margin, y, 195, y);
-  y += 8;
-  doc.setFont("helvetica", "bold");
-  doc.setTextColor(...lineColor);
-  doc.text("Habilidades Blandas", margin, y);
-  y += 7;
-  doc.setFont("helvetica", "normal");
-  doc.setTextColor(0);
-  const blandas = "Buena comunicación, trabajo en equipo, liderazgo, adaptabilidad, empatía y compromiso.";
-  const blandasText = doc.splitTextToSize(blandas, 180);
-  doc.text(blandasText, margin, y);
-  y += blandasText.length * 6 + 8;
-
-  // === PROYECTOS ===
-  doc.setDrawColor(...lineColor);
-  doc.line(margin, y, 195, y);
-  y += 8;
-  doc.setFont("helvetica", "bold");
-  doc.setTextColor(...lineColor);
-  doc.text("Proyectos Destacados", margin, y);
-  y += 7;
-
-  const proyectos = [
-    { titulo: "Tienda de Sneakers", desc: "Tienda en línea desarrollada con Python, Flask, HTML, CSS y JS. Incluye integración de pagos." },
-    { titulo: "Tienda Gamer", desc: "Plataforma web en desarrollo para venta de accesorios y consolas. Usa Backbone.js, Flask y APIs de pago." },
-    { titulo: "Analizador Léxico", desc: "Herramienta para corrección de texto y lógica gramatical. Desarrollada con Flask, Python y JS." },
-    { titulo: "Pequeñas Prácticas", desc: "Ejercicios básicos en Java para reforzar fundamentos de programación." }
-  ];
-
-  proyectos.forEach(p => {
+  const addSection = (title) => {
+    y += 8;
+    doc.setDrawColor(...azul);
+    doc.setLineWidth(0.4);
+    doc.line(margin, y, 190, y);
+    y += 6;
     doc.setFont("helvetica", "bold");
-    doc.setTextColor(30);
-    doc.text(`• ${p.titulo}`, margin, y);
+    doc.setFontSize(13);
+    doc.setTextColor(...azul);
+    doc.text(title, margin, y);
+    y += 7;
+    doc.setFont("helvetica", "normal");
+    doc.setFontSize(11);
+    doc.setTextColor(0, 0, 0);
+  };
+
+  // Secciones
+  addSection("Perfil Profesional");
+  doc.text(doc.splitTextToSize(
+    "Soy estudiante de Ingeniería en Sistemas Computacionales con interés en el desarrollo web, la creación de APIs, desarrollo de interfaces y aplicaciones con Flask y Flutter. Me motiva aprender nuevas tecnologías y resolver problemas con creatividad.",
+    170
+  ), margin, y);
+  y += 22;
+
+  addSection("Habilidades Técnicas");
+  doc.text("Python, Flask, Flutter, Git, GitHub, HTML, CSS, JavaScript, Java, C++, C#, C, MySQL, PostgreSQL.", margin, y);
+  y += 15;
+
+  addSection("Proyectos Destacados");
+  const proyectos = [
+    ["Tienda de Sneakers", "Tienda online con Flask y JS, integración de pagos."],
+    ["Tienda Gamer", "Plataforma para venta de consolas (Backbone.js + Flask)."],
+    ["Analizador Léxico", "Herramienta para análisis gramatical en Flask."]
+  ];
+  proyectos.forEach(([titulo, desc]) => {
+    doc.setFont("helvetica", "bold");
+    doc.text(`• ${titulo}`, margin, y);
     y += 5;
     doc.setFont("helvetica", "normal");
-    const desc = doc.splitTextToSize(p.desc, 175);
-    doc.text(desc, margin + 5, y);
-    y += desc.length * 6 + 3;
+    doc.text(doc.splitTextToSize(desc, 170), margin + 5, y);
+    y += 10;
   });
 
-  // === EDUCACIÓN ===
-  doc.setDrawColor(...lineColor);
-  doc.line(margin, y, 195, y);
-  y += 8;
-  doc.setFont("helvetica", "bold");
-  doc.setTextColor(...lineColor);
-  doc.text("Educación", margin, y);
-  y += 7;
-  doc.setFont("helvetica", "normal");
-  doc.setTextColor(0);
+  addSection("Educación");
   doc.text("Tecnológico Nacional de México Campus Iztapalapa", margin, y);
   y += 6;
   doc.text("Ingeniería en Sistemas Computacionales (2022 - Actualidad)", margin, y);
-  y += 10;
+  y += 15;
 
-  // === CERTIFICACIONES ===
-  doc.setDrawColor(...lineColor);
-  doc.line(margin, y, 195, y);
-  y += 8;
-  doc.setFont("helvetica", "bold");
-  doc.setTextColor(...lineColor);
-  doc.text("Certificaciones y Cursos", margin, y);
-  y += 7;
-  doc.setFont("helvetica", "normal");
-  doc.setTextColor(0);
-  const cursos = [
+  addSection("Certificaciones y Cursos");
+  [
     "Python - SoloLearn",
     "Java - SoloLearn",
     "SQL - SoloLearn",
-    "Flask - Curso en línea",
-    "Inteligencia Artificial - Curso complementario"
-  ];
-  cursos.forEach(curso => {
+    "Flask",
+    "Inteligencia Artificial"
+  ].forEach(curso => {
     doc.text(`• ${curso}`, margin + 3, y);
     y += 6;
   });
 
-  // === EXPERIENCIA ===
-  y += 5;
-  doc.setDrawColor(...lineColor);
-  doc.line(margin, y, 195, y);
-  y += 8;
-  doc.setFont("helvetica", "bold");
-  doc.setTextColor(...lineColor);
-  doc.text("Experiencia", margin, y);
-  y += 7;
-  doc.setFont("helvetica", "normal");
-  doc.setTextColor(0);
-  const experiencia = "Desarrollo de aplicaciones y páginas web para personas cercanas, prácticas de programación y clases básicas de bases de datos.";
-  const expText = doc.splitTextToSize(experiencia, 180);
-  doc.text(expText, margin, y);
+  addSection("Experiencia");
+  const exp = "Desarrollo de aplicaciones y páginas web para personas cercanas, prácticas de programación y clases básicas de bases de datos.";
+  doc.text(doc.splitTextToSize(exp, 170), margin, y);
 
   // Pie
   doc.setFontSize(9);
